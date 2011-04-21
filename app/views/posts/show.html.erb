@@ -11,7 +11,7 @@
 
 <% content_for :adminbar_left do %> 
 
-<li><%= link_to "Modifier l'article", edit_post_path(@post) %></li>
+<li><%= link_to t('post.edit'), edit_post_path(@post) %></li>
 
 <% if @post.commentable %>
 
@@ -36,7 +36,7 @@
 <% end %>
 
 <% content_for :adminbar_right do %> 
-<li class="right"><%= link_to "Supprimer l'article", post_path(@post), :confirm => "Are you sure you want to delete this post?", :method => :delete, :class => "delete" %></li>
+<li class="right"><%= link_to t('article.remove'), post_path(@post), :confirm => "Are you sure you want to delete this post?", :method => :delete, :class => "delete" %></li>
 <% end %>
 
 <div class="post">
@@ -104,11 +104,11 @@
 		
 		<div id="post_a_comment">
 		<% if !@post.commentable %>
-		<h2 id="comments_closed">Désolé, les commentaires ne sont pas autorisés pour cet article.</h2>
+		<h2 id="comments_closed"><%= t('post.comment.no_comments_allowed') %></h2>
 		<% end %>
 
 		<% if @post.commentable %>
-		<h2>Laisser un commentaire</h2>
+		<h2><%= t('post.comment.create') %></h2>
 		<%= form_for([@post, @comment], :remote => true) do |f| %>
 		<div id="new_comment_canvas">
 			<fieldset>
@@ -116,28 +116,28 @@
 				<% if current_user %>
 					<%= f.text_field :name, :value => current_user.initials, :size => "40" %> 
 				<% else %>
-					<%= f.text_field :name, :value => "Votre nom", :size => "40" %> 
+					<%= f.text_field :name, :value => t('post.comment.your_name'), :size => "40" %> 
 				<% end %>
 				</div>
 				
 				<div class="form-field">
-					<%= f.text_field :email, :value => "Votre adresse Email", :size => "40" %> 
+					<%= f.text_field :email, :value => t('post.comment.your_email'), :size => "40" %> 
 				</div>
 
 				<div class="form-field">
-					<%= f.text_field :website, :value => "Votre site web", :size => "40" %> 
+					<%= f.text_field :website, :value => t('post.comment.your_website'), :size => "40" %> 
 				</div>	
 			</fieldset>
 			
 			<fieldset>
 				<div class="form-field">
-					<%= f.text_area :content, :cols => "55", :rows => "6", :value => "Exprimer-vous." %>
+					<%= f.text_area :content, :cols => "55", :rows => "6", :value => t('post.comment.fill_in_content') %>
 				</div>
 			</fieldset>
 			
 			<fieldset>
 				<div class="form-submit">
-					<%= f.submit "Laisser mon commentaire", :disable_with => "Post comment" %> <span>ou </span> <%= link_to "voir l'apperçu", preview_post_comments_path(@post), :id => "preview_comment_link", :rel => "nofollow" %>
+					<%= f.submit t('post.comment.submit'), :disable_with => "Post comment" %> <span><%= t('sentence.by') %> </span> <%= link_to t('post.comment.your_email'), preview_post_comments_path(@post), :id => "preview_comment_link", :rel => "nofollow" %>
 				</div>
 			</fieldset>
 		</div><!-- new_comment_canvas -->
@@ -146,7 +146,7 @@
 			<div id="comment_preview"></div>
 			
 			<div class="form-submit">
-				<%= f.submit "Poster le commentaire", :disable_with => "Poster le commentaire", :id => "comment_submit_preview" %> <span>ou </span> <a id="edit_comment_link" href="#">Modifier</a>
+				<%= f.submit t('post.comment.submit'), :disable_with => "Poster le commentaire", :id => "comment_submit_preview" %> <span><%= t('sentence.by') %> </span> <a id="edit_comment_link" href="#"><%= t('post.comment.edit') %></a>
 			</div>
 		</div><!--comment_preview_canvas-->
 		<% end %> 

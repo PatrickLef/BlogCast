@@ -14,16 +14,16 @@ Drafts
 <% if @drafts.count == 0 %>
 
 <div class="archives">
-	<h2>Pas de brouillons.</h2>
+	<h2><%= t('draft.no_drafts') %></h2>
 	<ul>
-		<li>Write a post using the <%= link_to "Nouvel article", new_post_path %> option above.</li>
+		<li>Write a post using the <%= link_to t("post.create"), new_post_path %> option above.</li>
 	</ul>
 </div>
 
 <% else %>
 
 <div class="archives drafts">
-	<h2>Brouillons</h2>
+	<h2><%= t('draft.drafts') %></h2>
 	<ul>
 	<% for draft in @drafts %>
 		<li><%= link_to draft.title, edit_draft_path(draft) %>

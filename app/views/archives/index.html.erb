@@ -1,6 +1,6 @@
-<% content_for :title do %>Archives<% end %>
+<% content_for :title do %><%= t('archives.title') %><% end %>
 
-<% content_for :description do %>Welcome to the Blogcast Archive.<% end %>
+<% content_for :description do %><%= t('archive.description') %><% end %>
 
 <% if current_user %>
 <% content_for :robots do %>
@@ -19,7 +19,7 @@
 <div class="archives">
 	<h2>Blogcast Archive</h2>
 	<ul>
-		<li>Sorry, no posts to archive. Write your first post using the <%= link_to "Create Post", new_post_path %> option above.</li>
+		<li>Sorry, no posts to archive. Write your first post using the <%= link_to t('post.create'), new_post_path %> option above.</li>
 	</ul>
 </div>
 <% else %>

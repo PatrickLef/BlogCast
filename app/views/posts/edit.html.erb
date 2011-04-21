@@ -28,10 +28,10 @@ Edit Post
 	
 	<p class="meta">
 		<% if @post.comments.count == 0 %>
-		<%= link_to "Laisser un commentaire", post_path(@post, :anchor => "comments") %>
+		<%= link_to t('post.comment.create'), post_path(@post, :anchor => "comments") %>
 		<% else %>
 
-		<%= link_to pluralize(@post.comments.count, "commentaire"), post_path(@post, :anchor => "comments") %> dernier commentaire par <%= @post.comments.last.name %>
+		<%= link_to pluralize(@post.comments.count, t('post.comment.comment')), post_path(@post, :anchor => "comments") %> <%= t('post.comment.last_by') %> <%= @post.comments.last.name %>
 		<% end %>	
 	</p>
 		
@@ -54,7 +54,7 @@ Edit Post
 	</div><!--wmd-container-->
 
 	<ul class="options form-submit">
-		<li class="right"><%= f.submit "Enregistrer", :confirm => "Etes-vous sûrs de vouloir mettre à jour cet article ?" %></li>
+		<li class="right"><%= f.submit t('post.save'), :confirm => t('post.confirm_change')"Etes-vous sûrs de vouloir mettre à jour cet article ?" %></li>
 	</ul>
 <% end %>
 </div><!--sidebar-->

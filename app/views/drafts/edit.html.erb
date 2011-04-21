@@ -28,7 +28,7 @@ Edit Draft
 	</h2>
 	
 	<p class="meta">
-		<a href="#">Laisser un commentaire</a>
+		<a href="#"><%= t('post.comment.create') %></a>
 	</p>
 		
 	<div id="wmd-preview" class="entry"></div>
@@ -39,7 +39,7 @@ Edit Draft
 	<%= form_for(@draft) do |f| %>
 	<div id="title-container" class="draft-title-container">
 		<%= f.text_field :title %> 
-		<p>/titre-de-votre-article</p>
+		<p>/<%= t('post.title_identifier_example') %></p>
 	</div>
 	
 	<div id="wmd-container">
@@ -50,8 +50,8 @@ Edit Draft
 	</div><!--wmd-container-->
 	
 	<ul class="options form-submit">
-		<li><%= f.submit "Publier l'article", :id => "post_submit", :name => "save_post", :confirm => "Etes-vous sûrs de vouloir publier cet artcile ?" %></li>
-		<li class="right"><%= f.submit "Enregistrer", :name => "save_draft" %></li>
+		<li><%= f.submit t('post.publish'), :id => "post_submit", :name => "save_post", :confirm => t('post.publish_confirm') %></li>
+		<li class="right"><%= f.submit t('draft.save'), :name => "save_draft" %></li>
 	</ul>
 	<% end %>
 </div><!--sidebar-->

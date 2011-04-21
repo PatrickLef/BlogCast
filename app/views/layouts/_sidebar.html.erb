@@ -1,7 +1,7 @@
 <div class="sidebar">
 	<div class="block-content" id="intro">
-		<h2><%= link_to "Bloggez autrement.", posts_path %></h2>
-		<p>Un moteur de blogging simple et intuitif.</p>
+		<h2><%= link_to blog_title, posts_path %></h2>
+		<p><%= blog_description %></p>
 	</div><!--block-content-->
 	
 	<div class="block-content"  id="search">
@@ -15,5 +15,5 @@
 		</form>
 	</div><!--block-content-->
 	
-	<p class="subscribe"><a href="#">souscrire à ce blog</a></p>
+	<p class="subscribe"><a href="#"><%= t('blog.subscribe') %></a></p>
 </div><!--sidebar-->

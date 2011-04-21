@@ -26,7 +26,7 @@ Create Post
 	</span>
 	</h2>
 	
-	<p class="meta"><a href="#">Laisser un commentaire</a></p>
+	<p class="meta"><a href="#"><%= t('post.comment.create') %></a></p>
 		
 	<div id="wmd-preview" class="entry"></div>
 </div><!--post-->
@@ -36,7 +36,7 @@ Create Post
 	<%= form_for(@post) do |f| %>
 	<div id="title-container">
 		<%= f.text_field :title %> 
-		<p>/titre-de-votre-article</p>
+		<p>/<%= t('post.title_identifier_example') %></p>
 	</div>
 	
 	<div id="wmd-container">
@@ -47,8 +47,8 @@ Create Post
 	</div><!--wmd-container-->
 	
 	<ul class="options form-submit">
-		<li><%= f.submit "Publier l'article", :name => "save_post", :confirm => "Publier l'article ?" %></li>
-		<li class="right"><%= f.submit "Enregistrer le brouillon", :id => "draft_submit", :name => "save_draft" %></li>
+		<li><%= f.submit t('post.publish'), :name => "save_post", :confirm => t('post.publish_confirm') %></li>
+		<li class="right"><%= f.submit t("draft.save"), :id => "draft_submit", :name => "save_draft" %></li>
 	</ul>
 	<% end %> 
 </div><!--sidebar-->
