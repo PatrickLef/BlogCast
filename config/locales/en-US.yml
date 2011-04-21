@@ -230,5 +230,7 @@
       fill_in_content: Express yourself
       no_comments: "Sorry, no comments for this great post =("
       no_comments_allowed: "Sorry, no comments are allowed for this post!"
+      preview: "Preview"
   sentence:
     by: by
+    or: or

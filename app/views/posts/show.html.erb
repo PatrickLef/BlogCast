@@ -137,7 +137,7 @@
 			
 			<fieldset>
 				<div class="form-submit">
-					<%= f.submit t('post.comment.submit'), :disable_with => "Post comment" %> <span><%= t('sentence.by') %> </span> <%= link_to t('post.comment.your_email'), preview_post_comments_path(@post), :id => "preview_comment_link", :rel => "nofollow" %>
+					<%= f.submit t('post.comment.submit'), :disable_with => "Post comment" %> <span><%= t('sentence.or') %> </span> <%= link_to t('post.comment.preview'), preview_post_comments_path(@post), :id => "preview_comment_link", :rel => "nofollow" %>
 				</div>
 			</fieldset>
 		</div><!-- new_comment_canvas -->
@@ -146,7 +146,7 @@
 			<div id="comment_preview"></div>
 			
 			<div class="form-submit">
-				<%= f.submit t('post.comment.submit'), :disable_with => "Poster le commentaire", :id => "comment_submit_preview" %> <span><%= t('sentence.by') %> </span> <a id="edit_comment_link" href="#"><%= t('post.comment.edit') %></a>
+				<%= f.submit t('post.comment.submit'), :disable_with => "Poster le commentaire", :id => "comment_submit_preview" %> <span><%= t('sentence.or') %> </span> <a id="edit_comment_link" href="#"><%= t('post.comment.edit') %></a>
 			</div>
 		</div><!--comment_preview_canvas-->
 		<% end %> 
