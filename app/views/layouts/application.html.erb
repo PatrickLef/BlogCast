@@ -26,8 +26,8 @@
       <div class="adminbar">
         <ul>
         	<li><%= link_to image_tag("stock_spam.png"), post_spams_path(@current_action == "show" && @current_controller =="posts" ? @post : "0-spam-barbecue"), :class => "spam" %></li>
-          <li><%= link_to t('blog.back_to'),"/"%></li>
-        	<li><%= link_to t('blog.my_articles'), posts_path %></li>
+          <li><%= link_to t('blog.back_to'), "/" unless current_page? :controller => :posts, :action => :index %></li>
+        	<li><%= link_to t('blog.my_posts'), posts_path %></li>
         	<li><%= link_to t('post.create'), new_post_path %></li>
         	<li><%= link_to t('draft.drafts'), drafts_path %></li>
         	<%= yield :adminbar_left %>

@@ -194,7 +194,7 @@
   blog:
     subscribe: Subscribe to the blog
     back_to: Back to the blog
-    my_articles: My articles
+    my_posts: My posts
     
   session:
     log_out: Log out
